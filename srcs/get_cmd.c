@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 16:17:39 by cnathana          #+#    #+#             */
-/*   Updated: 2014/03/11 10:53:36 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/20 17:22:51 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ char	*ft_getcmd(t_bufinfo *buf, t_env *e)
 		ft_bzero(buf->c, 4);
 	}
 	ttermcap(0, e);
+	ft_putchar('\n');
 	return (buf->str);
 }

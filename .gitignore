@@ -1,0 +1,3 @@
+# Excluded files from push
+**/*.o
+42sh

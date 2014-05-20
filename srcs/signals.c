@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:54 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/20 15:38:08 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/20 17:22:02 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_signal_handle(int n)
 
 void	catch_signals(void)
 {
-	signal(SIGINT, ft_signal_handle);
+//	signal(SIGINT, ft_signal_handle);
 	signal(SIGTSTP, ft_signal_handle);
 	signal(SIGQUIT, ft_signal_handle);
 }

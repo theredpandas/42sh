@@ -6,7 +6,7 @@
 #    By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/05/16 10:47:30 by fgrivill          #+#    #+#              #
-#    Updated: 2014/05/20 15:36:26 by cnathana         ###   ########.fr        #
+#    Updated: 2014/05/20 16:13:15 by cnathana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = $(addsuffix .c, $(addprefix srcs/, $(FILES)))
 OBJ = $(SRCS:.c=.o)
 
 CC = @gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 TCAP = -L /usr/lib -ltermcap
 
