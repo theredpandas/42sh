@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 13:20:10 by cnathana          #+#    #+#             */
-/*   Updated: 2014/03/07 13:27:58 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/28 10:49:37 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ftsh.h"
 #include "ftsh_buffer.h"
 #include "libft.h"
+#include <stdio.h> //DEBUG
 
 void	tcurs_pos_refresh(t_bufinfo *buf, int chx, int chy)
 {
@@ -49,7 +50,7 @@ void	move_lr(t_bufinfo *buf, int lr)
 	{
 		if (buf->pos > 0)
 		{
-			if (buf->tcurs_posy == 0)
+			if (buf->tcurs_posy == 0 && buf->tcurs_posx)
 				tcurs_pos_refresh(buf, -1, buf->ws.ws_col);
 			else
 				tcurs_pos_refresh(buf, 0, -1);
@@ -63,7 +64,9 @@ void	move_lr(t_bufinfo *buf, int lr)
 			if (buf->tcurs_posy == (buf->ws.ws_col))
 				tcurs_pos_refresh(buf, 1, 0);
 			else
+			{
 				tcurs_pos_refresh(buf, 0, 1);
+			}
 			++(buf->pos);
 		}
 	}
@@ -81,5 +84,7 @@ int		is_arrowkey(t_bufinfo *buf)
 		; //gestion historique
 	else
 		return (0);
+//	printf("\n--Appel arrowkey--\ntposx = %d\ntposy = %d\npos = %d\nsize = %d\n",
+//			buf->tcurs_posx, buf->tcurs_posy, buf->pos, buf->size);
 	return (1);
 }

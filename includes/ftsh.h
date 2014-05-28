@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:53:57 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/20 15:51:08 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/28 11:01:34 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct		s_tree
 	struct s_tree	*root;
 }					t_tree;
 
-void				catch_signals(void);
+void				catch_signals(t_bufinfo *buf);
 
 void				and_or_tokens(t_tree *t, t_env *e);
 
@@ -76,6 +76,8 @@ char				**ft_setpath(void);
 void				set_basicenv(t_env *e);
 
 void				ft_cmd_not_found(char *str);
+
+void				ft_print_prompt(t_env *e);
 
 t_env				*ft_getenv(void);
 

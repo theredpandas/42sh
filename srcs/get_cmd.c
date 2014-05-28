@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 16:17:39 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/20 17:49:58 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/28 10:56:13 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	get_next_char(t_bufinfo *buf)
 
 char	*ft_getcmd(t_bufinfo *buf, t_env *e)
 {
+	ft_print_prompt(e);
 	ttermcap(1, e);
 	init_bufinfo(buf);
 	while (read(0, buf->c, 4))

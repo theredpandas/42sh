@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:33 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/20 17:21:06 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/28 10:46:54 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(void)
 
 	e = ft_getenv();
 	buf = (t_bufinfo *)malloc(sizeof(t_bufinfo));
-	catch_signals();
+	catch_signals(buf);
 	alloc_bufinfo(buf);
 	if (buf != NULL){
 	while (1)
