@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/28 10:59:31 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/28 11:27:27 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/28 11:45:31 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,18 @@ void	ft_print_prompt(t_env *e)
 	if (e->pwd && e->home)
 	{
 		len = ft_strlen(e->home);
+		ft_putstr("\033[33m");
 		if (!ft_strncmp(e->pwd, e->home, len))
 		{
-			ft_putstr("\033[33m");
 			tmp2 = ft_strsub(e->pwd, len, ft_strlen(e->pwd) - len);
 			tmp = ft_strjoin("~", tmp2);
 			ft_putstr(tmp);
 			free(tmp);
 			free(tmp2);
-			ft_putstr("\033[0m");
 		}
+		else
+			ft_putstr(e->pwd);
+		ft_putstr("\033[0m");
 	}
 	ft_putchar('\n');
 }

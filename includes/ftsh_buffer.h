@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/05 17:18:58 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/20 17:21:25 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/30 11:26:30 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define UP 4283163
 # define DOWN 4348699
 # define BACKSPACE 127
+# define CTRLD 4
 
 typedef struct			s_bufinfo
 {

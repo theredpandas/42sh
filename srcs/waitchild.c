@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:01:02 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/16 11:14:15 by fgrivill         ###   ########.fr       */
+/*   Updated: 2014/05/30 11:22:57 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_wait_child(int child, t_tree *tree, t_env *e, int active_pipe)
 		tree->success = WEXITSTATUS(status);
 	if (WIFSIGNALED(status))
 	{
+		ft_putstr("CTRL-C!\n");
 		if (WTERMSIG(status) == SIGINT)
 			tree->success = 1;
 	}

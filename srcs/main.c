@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:33 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/28 10:46:54 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/30 11:28:59 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int		main(void)
 	if (buf != NULL){
 	while (1)
 	{
-		cmd = ft_getcmd(buf, e);
+		if ((cmd = ft_getcmd(buf, e)) == NULL)
+			break ;
 		if (cmd[0] != 0)
 		{
 			if ((tree = ft_parse(cmd)) != NULL)

@@ -6,11 +6,12 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 16:17:39 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/28 10:56:13 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/30 11:28:39 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include <term.h>
 #include "ftsh.h"
 #include "ftsh_buffer.h"
@@ -50,8 +51,13 @@ char	*ft_getcmd(t_bufinfo *buf, t_env *e)
 	init_bufinfo(buf);
 	while (read(0, buf->c, 4))
 	{
-		if (*(unsigned int *) buf->c == RETURN)
+		if (*(unsigned int *)buf->c == RETURN)
 			break ;
+		if (*(unsigned int *)buf->c == CTRLD)
+		{
+			ttermcap(0, e);
+			return (NULL);
+		}
 		get_next_char(buf);
 		ft_bzero(buf->c, 4);
 	}
