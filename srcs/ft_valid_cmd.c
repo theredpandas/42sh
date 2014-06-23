@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:18 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/16 11:35:13 by fgrivill         ###   ########.fr       */
+/*   Updated: 2014/06/02 10:14:51 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 void			ft_cmd_not_found(char *str)
 {
-	ft_putstr("42sh: ");
-	ft_putstr(str);
-	ft_putendl(": command not found");
+	ft_putstr_fd("42sh: ", 2);
+	ft_putstr_fd(str, 2);
+	ft_putendl_fd(": command not found", 2);
 }
 
 int				ft_check_access(char *str)

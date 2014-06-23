@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:59:54 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/16 11:35:16 by fgrivill         ###   ########.fr       */
+/*   Updated: 2014/06/23 10:42:37 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,18 @@ void	ft_exec_all(t_tree *tree, t_env *e)
 {
 	if (tree->left)
 		ft_exec_all(tree->left, e);
-	if (tree->root && IS_R_ARROWS(tree->root->str))
+	if (tree->root && IS_R_ARROWS(tree->root->str) && ISN_TOK(tree->str))
 		ft_init_rarrows(tree, e);
-	if (tree->root && !IS_L_ARROW(tree->root->str))
-		ft_init_larrow(tree->root, e);
-	if (tree->root && !IS_LL_ARROW(tree->root->str))
+	if (tree->root && !IS_L_ARROW(tree->root->str) && ISN_TOK(tree->str))
+	{
+		if (ft_init_larrow(tree->root, e) < 0)
+		{
+			write(2, "fail", 4);
+		}
+	}
+	if (tree->root && !IS_LL_ARROW(tree->root->str) && ISN_TOK(tree->str))
 		ft_init_llarrow(tree->root);
-	if (tree->root && !IS_PIPE(tree->root->str))
+	if (tree->root && !IS_PIPE(tree->root->str) && ISN_TOK(tree->str))
 		pipe_token(tree, e);
 	else if (ISN_TOK(tree->str))
 		ft_exec_one(tree, e, 0);

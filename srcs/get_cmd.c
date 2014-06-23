@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 16:17:39 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/30 11:28:39 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/30 14:34:48 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	get_next_char(t_bufinfo *buf)
 char	*ft_getcmd(t_bufinfo *buf, t_env *e)
 {
 	ft_print_prompt(e);
+	ft_putstr("\033[32m");
 	ttermcap(1, e);
 	init_bufinfo(buf);
 	while (read(0, buf->c, 4))
@@ -62,6 +63,6 @@ char	*ft_getcmd(t_bufinfo *buf, t_env *e)
 		ft_bzero(buf->c, 4);
 	}
 	ttermcap(0, e);
-	ft_putchar('\n');
+	ft_putstr("\033[0m\n");
 	return (buf->str);
 }

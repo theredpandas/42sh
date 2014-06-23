@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:12 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/16 11:00:13 by fgrivill         ###   ########.fr       */
+/*   Updated: 2014/05/30 14:24:06 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int				ft_init_rarrows(t_tree *tree, t_env *e)
 {
 	int		n;
 
-	dup2(e->fd_cpy[1], 1);
 	if (!IS_R_ARROW(tree->root->str))
 	{
 		if ((n = ft_init_redir_r(tree->root, e)) == -2 || n == -3)

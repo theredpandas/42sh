@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:53:57 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/28 11:01:34 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/23 10:19:02 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ typedef struct		s_env
 	char			*oldpwd;
 	char			**env;
 	int				tmp_fd;
-	int				pipes[2];
 	int				fd_cpy[2];
+	int				pipes[2];
 }					t_env;
 
 typedef struct		s_list
@@ -58,6 +58,7 @@ typedef struct		s_tree
 {
 	char			*str;
 	int				success;
+	int				p[2];
 	struct s_tree	*left;
 	struct s_tree	*right;
 	struct s_tree	*root;

@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:51:47 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/16 10:51:49 by fgrivill         ###   ########.fr       */
+/*   Updated: 2014/06/02 10:15:42 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int					ft_putstr(const char *s);
 int					ft_strlen(const char *s);
 int					ft_putendl(const char *s);
 int					ft_putstr_fd(char const *s, int fd);
+int					ft_putendl_fd(char const *s, int fd);
 int					ft_strncmp(char *str1, char *str2, int len);
 
 char				*ft_strdup(char *s);

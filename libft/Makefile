@@ -6,7 +6,7 @@
 #    By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/05/16 10:49:16 by fgrivill          #+#    #+#              #
-#    Updated: 2014/05/16 11:04:51 by fgrivill         ###   ########.fr        #
+#    Updated: 2014/06/02 10:15:56 by cnathana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = srcs/ft_strlen.c srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_icharjoin.c\
 	   srcs/ft_ichardelet.c srcs/ft_strcat.c srcs/ft_bzero.c srcs/tputchar.c\
 	   srcs/ft_strncmp.c srcs/ft_strsplit.c srcs/ft_strdup.c srcs/ft_strtrim.c\
 	   srcs/ft_isspace.c srcs/ft_get_next_line.c srcs/ft_strnjoin.c\
-	   srcs/ft_strjoin.c srcs/ft_putstr_fd.c
+	   srcs/ft_strjoin.c srcs/ft_putstr_fd.c srcs/ft_putendl_fd.c
 
 OBJ = $(SRCS:.c=.o)
 

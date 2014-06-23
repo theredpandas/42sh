@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 13:20:10 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/28 10:49:37 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/05/30 14:34:06 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "ftsh.h"
 #include "ftsh_buffer.h"
 #include "libft.h"
-#include <stdio.h> //DEBUG
 
 void	tcurs_pos_refresh(t_bufinfo *buf, int chx, int chy)
 {
@@ -84,7 +83,5 @@ int		is_arrowkey(t_bufinfo *buf)
 		; //gestion historique
 	else
 		return (0);
-//	printf("\n--Appel arrowkey--\ntposx = %d\ntposy = %d\npos = %d\nsize = %d\n",
-//			buf->tcurs_posx, buf->tcurs_posy, buf->pos, buf->size);
 	return (1);
 }
