@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 16:17:39 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/30 14:34:48 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 12:59:07 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 #include "ftsh_termcap.h"
 #include "libft.h"
 
-void	init_bufinfo(t_bufinfo *buf)
+void	init_bufinfo(t_bufinfo *buf, int prompt_size)
 {
 	ft_bzero(buf->c, 5);
 	ft_bzero(buf->str, 2048);
 	buf->pos = 0;
 	buf->tcurs_posx = 0;
-	buf->tcurs_posy = 0;
+	buf->tcurs_posy = prompt_size;
 	buf->size = 0;
 }
 
@@ -49,7 +49,7 @@ char	*ft_getcmd(t_bufinfo *buf, t_env *e)
 	ft_print_prompt(e);
 	ft_putstr("\033[32m");
 	ttermcap(1, e);
-	init_bufinfo(buf);
+	init_bufinfo(buf, e->prompt_size);
 	while (read(0, buf->c, 4))
 	{
 		if (*(unsigned int *)buf->c == RETURN)

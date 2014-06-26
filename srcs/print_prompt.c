@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/28 10:59:31 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/28 11:45:31 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:00:54 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	ft_print_prompt(t_env *e)
 			ft_putstr(e->pwd);
 		ft_putstr("\033[0m");
 	}
-	ft_putchar('\n');
+	ft_putstr("\n$> ");
 }

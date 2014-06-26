@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 13:20:10 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/30 14:34:06 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:02:05 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	tcurs_pos_refresh(t_bufinfo *buf, int chx, int chy)
 	}
 }
 
-void	move_lr(t_bufinfo *buf, int lr)
+void	move_lr(t_bufinfo *buf, int lr, t_env *e)
 {
 	if (lr == 1)
 	{
@@ -71,12 +71,12 @@ void	move_lr(t_bufinfo *buf, int lr)
 	}
 }
 
-int		is_arrowkey(t_bufinfo *buf)
+int		is_arrowkey(t_bufinfo *buf, t_env *e)
 {
 	if (*(unsigned int *)buf->c == LEFT)
-		move_lr(buf, 1);
+		move_lr(buf, 1, e);
 	else if (*(unsigned int *)buf->c == RIGHT)
-		move_lr(buf, 2);
+		move_lr(buf, 2, e);
 	else if (*(unsigned int *)buf->c == UP)
 		; //gestion historique
 	else if (*(unsigned int *)buf->c == DOWN)
