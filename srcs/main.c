@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:33 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/06/02 10:08:41 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:45:04 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ void	dup_reset(t_env *e, int i)
 		e->fd_cpy[0] = dup(0);
 		e->fd_cpy[1] = dup(1);
 	}
+}
+
+t_env	*singleton_env(void)
+{
+	static t_env	*e = NULL;
+
+	if (e == NULL)
+		e = ft_getenv();
+	set_basicenv(e);
+	return (e);
 }
 
 void	print_tree(t_tree *tree, int i)
@@ -58,31 +68,32 @@ int		main(void)
 	t_env		*e;
 	t_tree		*tree;
 
-	e = ft_getenv();
+	e = singleton_env();
+//	e = ft_getenv();
 	buf = (t_bufinfo *)malloc(sizeof(t_bufinfo));
 	catch_signals(buf);
 	alloc_bufinfo(buf);
 	if (buf != NULL){
-	while (1)
-	{
-		dup_reset(e, 0);
-		if ((cmd = ft_getcmd(buf, e)) == NULL)
-			break ;
-		if (cmd[0] != 0)
+		while (1)
 		{
-			if ((tree = ft_parse(cmd)) != NULL)
+			dup_reset(e, 0);
+			if ((cmd = ft_getcmd(buf, e)) == NULL)
+				break ;
+			if (cmd[0] != 0)
 			{
-				t_tree	*debug = tree;
-				print_tree(debug, 0);
-				debug = NULL;
-				ft_exec(tree, e);
-				ft_free_tree(tree);
+				if ((tree = ft_parse(cmd)) != NULL)
+				{
+					//	t_tree	*debug = tree;
+					//	print_tree(debug, 0);
+					//	debug = NULL;
+					ft_exec(tree, e);
+					ft_free_tree(tree);
+				}
+				else
+					ft_putendl("42sh: parse error");
 			}
-			else
-				ft_putendl("42sh: parse error");
+			dup_reset(e, 1);
 		}
-		dup_reset(e, 1);
-	}
-	ft_free_env(e);}
-	return (0);
+		ft_free_env(e);}
+		return (0);
 }

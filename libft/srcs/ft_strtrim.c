@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:53:41 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/16 10:53:42 by fgrivill         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:32:27 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@ char	*ft_strtrim(char *s)
 {
 	char	*cpy;
 	int		i;
+	int		j;
 
 	if (!s || (cpy = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))) == NULL)
 		return (NULL);
-	i = -1;
-	while (ft_isspace(*s))
-		s++;
-	while (s[++i] != '\0')
-		cpy[i] = s[i];
-	--i;
-	while (ft_isspace(cpy[i]))
-		--i;
-	cpy[i + 1] = '\0';
+	i = 0;
+	while (s[i] && ft_isspace(s[i]))
+		++i;
+	j = 0;
+	while (s[i] != '\0')
+		cpy[j++] = s[i++];
+	--j;
+	while (j && ft_isspace(cpy[j]))
+		--j;
+	cpy[j + 1] = '\0';
 	return (cpy);
 }

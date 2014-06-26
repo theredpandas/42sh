@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:25 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/06/26 13:00:14 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:10:10 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static t_env	*ft_initenv(t_env *e)
 	e->term = NULL;
 	e->pwd = NULL;
 	e->oldpwd = NULL;
-	e->prompt_size = 3;
+	e->prompt_size = 7;
 	return (e);
 }
 

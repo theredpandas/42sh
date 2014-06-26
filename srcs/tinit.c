@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 10:21:28 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/30 11:24:42 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:48:57 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	tenable(t_stermios *term, t_env *e)
 
 	tgetent(buff, e->term);
 	tcgetattr(0, term);
-	term->c_lflag &= ~(ICANON | ECHO | OPOST | ISIG);
+	term->c_lflag &= ~(ICANON | ECHO | OPOST);
 	term->c_cc[VMIN] = 1;
 	term->c_cc[VTIME] = 0;
 	tputs(tgetstr("im", NULL), 1, tputchar);
@@ -33,7 +33,7 @@ void	tenable(t_stermios *term, t_env *e)
 void	tdisable(t_stermios *term)
 {
 	tputs(tgetstr("ei", NULL), 1, tputchar);
-	term->c_lflag |= (ECHO | ICANON | OPOST | ISIG);
+	term->c_lflag |= (ECHO | ICANON | OPOST);
 	tcsetattr(0, TCSANOW, term);
 }
 

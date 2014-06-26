@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/28 10:59:31 by cnathana          #+#    #+#             */
-/*   Updated: 2014/06/26 13:00:54 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:18:13 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,23 @@
 #include "ftsh.h"
 #include "libft.h"
 
+void	ft_print_user(t_env *e)
+{
+	if (e->user)
+	{
+		ft_putstr("\033[36m");
+		ft_putstr(e->user);
+		ft_putstr("\033[0m - ");
+	}
+}
+
 void	ft_print_prompt(t_env *e)
 {
 	char	*tmp;
 	char	*tmp2;
 	int		len;
 
-	ft_putstr("\033[36m42sh\033[0m - ");
+	ft_print_user(e);
 	if (e->pwd && e->home)
 	{
 		len = ft_strlen(e->home);
@@ -37,5 +47,5 @@ void	ft_print_prompt(t_env *e)
 			ft_putstr(e->pwd);
 		ft_putstr("\033[0m");
 	}
-	ft_putstr("\n$> ");
+	ft_putstr("\033[36m 42sh> ");
 }

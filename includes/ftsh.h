@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:53:57 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/06/26 12:59:32 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:45:54 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ typedef struct		s_tree
 	struct s_tree	*right;
 	struct s_tree	*root;
 }					t_tree;
+
+t_env				*singleton_env(void);
+
+void				ft_print_prompt(t_env *e);
 
 void				catch_signals(t_bufinfo *buf);
 
