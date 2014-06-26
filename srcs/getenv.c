@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 11:00:25 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/06/26 13:10:10 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 14:00:47 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ static void		ft_welcome(void)
 	ft_putendl("        ,:+$+-,vH#MMMMMMM@= \033[0;33m=,\033[36m");
 	ft_putendl("              =++%%%%+v:-.");
 	ft_putendl("\033[0;0m");
-	ft_putendl("\n\033[36mCURRENTLY IN DEV. To deactivate termcaps if there's a crash, just \"exit\" the shell!\033[0;0m\n");
 }
 
 t_env			*ft_getenv(void)

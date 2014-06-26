@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:58:53 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/05/20 16:13:00 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:56:13 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ int		ft_cd(t_env *env, char **opt)
 	{
 		if (ft_strncmp(opt[1], "-", 2) == 0)
 		{
-//			print_pwd_tilde(env, env->oldpwd);
-//			ft_putchar('\n');
+			print_pwd_tilde(env, env->oldpwd);
+			ft_putchar('\n');
 			way = env->oldpwd;
 		}
 		else

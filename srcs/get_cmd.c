@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 16:17:39 by cnathana          #+#    #+#             */
-/*   Updated: 2014/06/26 13:52:02 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 14:00:30 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	get_next_char(t_bufinfo *buf)
 {
 	if (is_arrowkey(buf))
 		return ;
-	else if (*(unsigned int *) buf->c == BACKSPACE)
+	else if (*(unsigned int *)buf->c == BACKSPACE)
 	{
 		if (buf->pos > 0)
 			delete_char(buf);

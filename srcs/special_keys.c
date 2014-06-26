@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 13:20:10 by cnathana          #+#    #+#             */
-/*   Updated: 2014/06/26 13:04:04 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 14:05:43 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ int		is_arrowkey(t_bufinfo *buf)
 	else if (*(unsigned int *)buf->c == RIGHT)
 		move_lr(buf, 2);
 	else if (*(unsigned int *)buf->c == UP)
-		; //gestion historique
+		;
 	else if (*(unsigned int *)buf->c == DOWN)
-		; //gestion historique
+		;
 	else
 		return (0);
 	return (1);

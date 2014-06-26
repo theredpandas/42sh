@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_cmd_init.c                                     :+:      :+:    :+:   */
+/*   print_pwd_tilde.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/07 14:18:53 by cnathana          #+#    #+#             */
-/*   Updated: 2014/06/26 14:00:39 by cnathana         ###   ########.fr       */
+/*   Created: 2014/06/26 13:57:21 by cnathana          #+#    #+#             */
+/*   Updated: 2014/06/26 13:57:46 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ftsh.h"
-#include "ftsh_buffer.h"
+#include "libft.h"
 
-int		alloc_bufinfo(t_bufinfo *cmd)
+void	print_pwd_tilde(t_env *e, char *s)
 {
-	if ((cmd->str = (char *)malloc(sizeof(char) * 2049)) == NULL)
-		return (-1);
-	if ((cmd->c = (char *)malloc(sizeof(char) * 5)) == NULL)
-		return (-1);
-	return (0);
+	char	*tmp;
+	char	*tmp2;
+	int		len;
+
+	len = ft_strlen(e->home);
+	if (!ft_strncmp(e->home, s, len))
+	{
+		tmp2 = ft_strsub(s, len, ft_strlen(s) - len);
+		tmp = ft_strjoin("~", tmp2);
+		ft_putstr(tmp);
+		free(tmp);
+		free(tmp2);
+	}
+	else
+		ft_putstr(s);
 }

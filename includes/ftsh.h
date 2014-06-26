@@ -6,7 +6,7 @@
 /*   By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 10:53:57 by fgrivill          #+#    #+#             */
-/*   Updated: 2014/06/26 13:45:54 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 13:58:27 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ typedef struct		s_tree
 	struct s_tree	*right;
 	struct s_tree	*root;
 }					t_tree;
+
+void				print_pwd_tilde(t_env *e, char *s);
 
 t_env				*singleton_env(void);
 

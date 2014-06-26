@@ -6,7 +6,7 @@
 #    By: fgrivill <fgrivill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/05/16 10:47:30 by fgrivill          #+#    #+#              #
-#    Updated: 2014/05/28 11:01:45 by cnathana         ###   ########.fr        #
+#    Updated: 2014/06/26 13:58:40 by cnathana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FILES = basicenv cd check_token echo error_files error_open\
 		token env setenv exec ft_init_larrow free replace\
 		ft_init_rarrow builtin waitchild exec_tokens\
 		add_del_char get_cmd_init special_keys tinit\
-		print_prompt
+		print_prompt print_pwd_tilde
 
 SRCS = $(addsuffix .c, $(addprefix srcs/, $(FILES)))
 

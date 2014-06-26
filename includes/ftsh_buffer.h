@@ -6,7 +6,7 @@
 /*   By: cnathana <cnathana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/05 17:18:58 by cnathana          #+#    #+#             */
-/*   Updated: 2014/05/30 11:26:30 by cnathana         ###   ########.fr       */
+/*   Updated: 2014/06/26 14:07:09 by cnathana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ typedef struct			s_bufinfo
 	struct winsize		ws;
 }						t_bufinfo;
 
-int		alloc_bufinfo(t_bufinfo *buf);
+int						alloc_bufinfo(t_bufinfo *buf);
 
-int		is_arrowkey(t_bufinfo *buf);
+int						is_arrowkey(t_bufinfo *buf);
 
-void	add_char(t_bufinfo *buf);
+void					add_char(t_bufinfo *buf);
 
-void	delete_char(t_bufinfo *buf);
+void					delete_char(t_bufinfo *buf);
 
-#endif /* !FTSH_BUFFER_H */
+#endif
